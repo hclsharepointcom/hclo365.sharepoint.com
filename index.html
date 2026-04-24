@@ -34,22 +34,30 @@ img{display:block;max-width:100%}
 .drawer-photo{width:96px;height:96px;border-radius:8px;object-fit:cover;border:3px solid rgba(255,255,255,.75);background:#eee}
 .drawer-company{font-size:2rem;font-weight:700;line-height:1.1}.drawer-name{font-size:1rem;margin-top:8px;font-weight:600}.drawer-id{font-size:1rem;opacity:.96;margin-top:8px}
 .pass-wrap{padding:16px}
-.pass-card{background:linear-gradient(135deg,#ff8b16 0%,#f57a0e 55%,#ef6d00 100%);color:#fff;border-radius:0;padding:20px 18px 24px;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(241,121,17,.22)}
-.pass-card:before,.pass-card:after{content:'';position:absolute;border-radius:50%;background:rgba(255,219,155,.28);filter:blur(2px)}
-.pass-card:before{width:220px;height:220px;right:-55px;top:120px}.pass-card:after{width:180px;height:180px;left:-70px;top:40px}
-.pass-logo{position:absolute;right:18px;top:16px;font-size:4rem;font-weight:700;line-height:1;color:rgba(255,255,255,.92);font-style:italic}
-.entry-badge{display:inline-grid;grid-template-columns:auto auto;border:2px solid rgba(255,255,255,.9);position:relative;z-index:1}
-.entry-badge span{padding:8px 12px;background:rgba(255,255,255,.1);font-size:.95rem;letter-spacing:.35rem}.entry-badge span:last-child{background:#fff;color:#de7711;letter-spacing:.35rem}
-.zone-box{margin-top:34px;border:6px solid rgba(255,255,255,.95);position:relative;z-index:1}
-.zone-row{display:grid;grid-template-columns:120px 1fr}.zone-left,.zone-right{min-height:190px;display:flex;align-items:center;justify-content:center}.zone-left{border-right:6px solid rgba(255,255,255,.95)}
-.zone-left span{font-size:3.4rem;font-weight:700;letter-spacing:.2rem;writing-mode:vertical-rl;transform:rotate(180deg)}
-.zone-right span{font-size:8rem;font-weight:700;line-height:1}
-.entry-time{border-top:6px solid rgba(255,255,255,.95);border-bottom:6px solid rgba(255,255,255,.95);padding:8px 12px;text-align:center;font-size:1.05rem;font-weight:700;letter-spacing:.04rem}
-.color-band{padding:8px 12px;text-align:center;font-size:3.8rem;font-weight:700;line-height:1.05}
-.gate{margin-top:22px;text-align:center;font-size:2rem;font-weight:700;position:relative;z-index:1}
-.admits{margin:22px auto 0;background:#fff;color:#55536a;width:max-content;padding:8px 18px;border-radius:10px;font-size:1rem;letter-spacing:.18rem;position:relative;z-index:1}
-.pass-note{padding:18px 0 6px;text-align:center;font-size:1.05rem;color:#444;font-weight:700}
-@media (max-width:420px){.page{max-width:100%}.float{right:8px}.section h2{font-size:1.55rem}.drawer-company{font-size:1.75rem}.zone-left,.zone-right{min-height:160px}.zone-left span{font-size:2.8rem}.zone-right span{font-size:6.8rem}.color-band{font-size:3rem}.gate{font-size:1.7rem}}
+.pass-card{background:#f58a00;color:#fff;border-radius:0;padding:20px 18px 18px;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(241,121,17,.22)}
+.pass-card:before,.pass-card:after,.pass-card .grain1,.pass-card .grain2{content:'';position:absolute;border-radius:50%;pointer-events:none}
+.pass-card:before{width:320px;height:88px;left:-6px;top:48px;background:radial-gradient(circle at center, rgba(255,244,211,.92) 0%, rgba(255,244,211,.55) 22%, rgba(255,244,211,0) 62%);transform:rotate(12deg)}
+.pass-card:after{width:190px;height:190px;right:-42px;bottom:62px;background:radial-gradient(circle at center, rgba(255,230,180,.55) 0%, rgba(255,230,180,.22) 38%, rgba(255,230,180,0) 72%)}
+.pass-logo{position:absolute;right:18px;top:14px;color:#fff;font-style:italic;font-weight:900;line-height:.72;text-align:right;z-index:2;width:96px;transform:skewX(-10deg)}
+.pass-logo .num{display:block;font-size:4.6rem;letter-spacing:-.28rem;text-shadow:0 1px 0 rgba(255,255,255,.15)}
+.pass-logo .txt{display:block;font-size:2rem;letter-spacing:-.22rem;margin-top:-16px;font-weight:900}
+.entry-badge{display:inline-grid;grid-template-columns:auto;grid-template-rows:auto auto;border:2px solid rgba(255,255,255,.9);position:relative;z-index:1;background:transparent;margin-left:2px}
+.entry-badge span{padding:7px 14px;font-size:.88rem;letter-spacing:.48rem;line-height:1.02;background:rgba(255,255,255,.04)}
+.entry-badge span:last-child{background:#fff;color:#dd7b19}
+.zone-box{margin:28px 22px 0 22px;border:5px solid rgba(255,255,255,.96);position:relative;z-index:1;background:transparent}
+.zone-row{display:grid;grid-template-columns:112px 1fr}.zone-left,.zone-right{min-height:166px;display:flex;align-items:center;justify-content:center}.zone-left{border-right:5px solid rgba(255,255,255,.96)}
+.zone-left span{font-size:3rem;font-weight:700;letter-spacing:.08rem;writing-mode:vertical-rl;transform:rotate(180deg)}
+.zone-right span{font-size:8.2rem;font-weight:700;line-height:1}
+.entry-time{border-top:5px solid rgba(255,255,255,.96);border-bottom:5px solid rgba(255,255,255,.96);padding:6px 8px;text-align:center;font-size:.95rem;font-weight:700;letter-spacing:0;background:#d9892f;color:#fff;white-space:nowrap}
+.color-band{padding:4px 10px 7px;text-align:center;font-size:3.35rem;font-weight:700;line-height:1.02;white-space:nowrap;overflow:hidden}
+.gate{margin-top:18px;text-align:center;font-size:1.9rem;font-weight:700;position:relative;z-index:1}
+.admits{margin:18px auto 0;background:#f2eef4;color:#5a5868;width:max-content;padding:7px 20px;border-radius:7px;font-size:1rem;letter-spacing:.18rem;position:relative;z-index:1;box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.pass-ribbon{margin:16px -18px 0;background:#1f1a1b;color:#fff;padding:10px 18px 9px;position:relative;font-weight:700;font-size:.94rem;text-align:center;line-height:1.1}
+.pass-ribbon:before,.pass-ribbon:after{content:'';position:absolute;top:0;width:0;height:0;border-top:19px solid transparent;border-bottom:19px solid transparent}.pass-ribbon:before{left:0;border-left:18px solid #f58a00}.pass-ribbon:after{right:0;border-right:18px solid #f58a00}
+.pass-ribbon span{font-style:italic}
+.pass-note{padding:18px 0 0;text-align:center;font-size:1.05rem;color:#111;font-weight:700;display:flex;align-items:center;justify-content:center;gap:26px}
+.pass-note .refresh{font-size:2.2rem;color:#8b3dd2;font-weight:500;line-height:1}
+@media (max-width:420px){.page{max-width:100%}.float{right:8px}.section h2{font-size:1.55rem}.drawer-company{font-size:1.75rem}.zone-left,.zone-right{min-height:154px}.zone-left span{font-size:2.65rem}.zone-right span{font-size:7.2rem}.color-band{font-size:3rem}.gate{font-size:1.65rem}.entry-time{font-size:.84rem}.pass-logo{right:14px;top:10px;width:82px}.pass-logo .num{font-size:4rem}.pass-logo .txt{font-size:1.7rem;margin-top:-14px}.pass-ribbon{font-size:.8rem}.pass-note{gap:20px}}
 </style>
 </head>
 <body>
@@ -96,23 +104,9 @@ img{display:block;max-width:100%}
           <div class="drawer-id" id="drawerId">52210450</div>
         </div>
       </div>
-      <div class="pass-wrap">
-        <div class="pass-card">
-          <div class="pass-logo">50</div>
-          <div class="entry-badge"><span>ENTRY</span><span>PASS</span></div>
-          <div class="zone-box">
-            <div class="zone-row"><div class="zone-left"><span>ZONE</span></div><div class="zone-right"><span>D</span></div></div>
-            <div class="entry-time">ENTRY TIME - 4:45PM - 5:15PM</div>
-            <div class="color-band">ORANGE</div>
-          </div>
-          <div class="gate">ENTRY GATE - 2</div>
-          <div class="admits">ADMITS ONE</div>
-        </div>
-        <div class="pass-note">Refresh to find out!</div>
+           <div class="pass-wrap">
+        <img src="event-pass-img.jpg" alt="Event pass" class="event-image">
       </div>
-    </div>
-  </div>
-</div>
 
 <div class="float"><button class="fbtn">👍</button><button class="fbtn">⇄</button><button class="fbtn">✦</button></div>
 <script>

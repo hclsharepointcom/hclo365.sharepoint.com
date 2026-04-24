@@ -8,66 +8,432 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f5f5f7;--surface:#fff;--border:#e9e3f4;--muted:#6f6782;--text:#191525;--primary:#6e39ea;--shadow:0 10px 28px rgba(33,21,83,.08);--radius:18px;font-family:'Quicksand',sans-serif}
+:root{
+  --bg:#f5f5f7;
+  --surface:#fff;
+  --border:#e9e3f4;
+  --muted:#6f6782;
+  --text:#191525;
+  --primary:#6e39ea;
+  --shadow:0 10px 28px rgba(33,21,83,.08);
+  --radius:18px;
+  font-family:'Quicksand',sans-serif;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#171514;color:var(--text);font-family:'Quicksand',sans-serif}
+body{
+  background:#171514;
+  color:var(--text);
+  font-family:'Quicksand',sans-serif;
+}
 img{display:block;max-width:100%}
-.page{max-width:430px;margin:0 auto;min-height:100vh;background:var(--surface);position:relative;overflow:hidden}
-.top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #ece8f5;background:#fff}
-.brand{font-size:1.85rem;font-weight:700;color:#1562ae}.icons{display:flex;gap:18px;color:#444057}
-.notice{padding:14px 16px;background:#fff8f2;border-top:1px solid #f3ddc5;border-bottom:1px solid #f3ddc5;color:#4f443d;font-size:15px}
-.port{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #ece8f5;background:#fff}
-.pbrand{display:inline-flex;align-items:flex-end;line-height:1}.pbrand .my{font-family:'Caveat',cursive;font-size:2.05rem;color:#8ea0bd;transform:skewX(-10deg) translateY(2px);margin-right:2px}.pbrand .hcl{font-size:1.55rem;font-weight:700;color:#3d87d8;letter-spacing:-.06em}.pbrand .tech{font-size:1.52rem;font-weight:700;color:#184ea8;letter-spacing:-.06em}
-.hero{padding:34px 16px 20px;background:linear-gradient(180deg,#7ea6ff 0%,#5a73f3 42%,#743ce4 100%);color:#fff}.hero h1{font-size:2.05rem;font-weight:500;text-align:center;margin-bottom:18px}.hero h1 span{font-weight:700}
-.search{background:#fff;color:#59526f;border-radius:14px;display:grid;grid-template-columns:120px 1fr;overflow:hidden;box-shadow:var(--shadow)}.search>div{padding:14px;display:flex;align-items:center;gap:10px}.search .left{border-right:1px solid #ece7f7}
-.apps{margin-top:-10px;padding:0 12px 12px;background:#fff}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 12px;padding:0 4px}.app{text-align:center;font-size:15px;color:#28233d}.ico{width:58px;height:58px;margin:0 auto 10px;border-radius:18px;background:#fff;box-shadow:0 8px 20px rgba(86,54,178,.12);display:grid;place-items:center;font-size:1.5rem;border:1px solid rgba(107,56,234,.06)}
-.gold{color:#d8a12a}.blue{color:#3f89ff}.pink{color:#c14ca4}.green{color:#34a58c}.links{display:flex;justify-content:center;gap:20px;padding:14px 0 6px;color:#2f2b3a;font-weight:700}
-.section{padding:18px 16px 28px;background:#f5f5f5}.section h2{font-size:1.8rem;margin-bottom:18px;color:#40395a}
-.id{display:grid;grid-template-columns:1.06fr .94fr;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-bottom:14px}.info{padding:16px}.mini{font-size:13px;color:var(--muted);margin-bottom:10px}.info h3{font-size:1.1rem;margin-bottom:8px}.info p{font-size:1.02rem;font-weight:600;margin-bottom:14px}.photo-wrap{background:linear-gradient(135deg,#f3d9ce,#f5e8df 45%,#dcc1b4);display:grid;place-items:center;padding:12px}.profile-photo{width:100%;height:150px;object-fit:cover;border-radius:8px;border:2px solid rgba(255,255,255,.75);background:#ececec}.btn{display:inline-block;text-decoration:none;color:var(--primary);border:1px solid var(--primary);border-radius:10px;padding:8px 14px;font-weight:700;background:#fff}
-.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;min-height:168px;display:flex;flex-direction:column}.card h3{font-size:1.02rem;margin-bottom:10px;color:#332e48}.card p{color:#29253b;font-size:1.02rem;margin-bottom:auto}
-.float{position:fixed;right:12px;top:46%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:20}.fbtn{width:56px;height:56px;border:none;border-radius:50%;color:#fff;background:linear-gradient(180deg,#6d5cf5,#dd5fa4);box-shadow:var(--shadow);font-size:1.35rem}
-.drawer{position:fixed;inset:0;background:#fff;display:none;z-index:50;overflow:auto}.drawer.show{display:block}
-.drawer-panel{width:100%;max-width:430px;min-height:100vh;margin:0 auto;background:#fff}
-.drawer-head{display:flex;justify-content:center;align-items:center;padding:18px 18px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:2}.drawer-head span{font-size:1.2rem;font-weight:700}.drawer-close{position:absolute;left:16px;top:8px;border:none;background:transparent;font-size:2.4rem;line-height:1;color:#2b253e}
+.page{
+  max-width:430px;
+  margin:0 auto;
+  min-height:100vh;
+  background:var(--surface);
+  position:relative;
+  overflow:hidden;
+}
+
+/* top bar like SharePoint */
+.top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:8px 16px 6px;
+  border-bottom:1px solid #ece8f5;
+  background:#fff;
+}
+.brand{
+  font-size:1.2rem;
+  font-weight:600;
+  color:#0078d4;
+}
+.icons{
+  display:flex;
+  gap:16px;
+  color:#444057;
+  font-size:1.1rem;
+}
+
+/* notice bar smaller */
+.notice{
+  padding:8px 16px;
+  background:#fff8f2;
+  border-top:1px solid #f3ddc5;
+  border-bottom:1px solid #f3ddc5;
+  color:#4f443d;
+  font-size:13px;
+}
+
+/* portal header */
+.port{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 16px;
+  border-bottom:1px solid #ece8f5;
+  background:#fff;
+}
+.pbrand{
+  display:inline-flex;
+  align-items:flex-end;
+  line-height:1;
+}
+.pbrand .my{
+  font-family:'Caveat',cursive;
+  font-size:1.6rem;
+  color:#8ea0bd;
+  transform:skewX(-10deg) translateY(1px);
+  margin-right:2px;
+}
+.pbrand .hcl{
+  font-size:1.2rem;
+  font-weight:700;
+  color:#3d87d8;
+  letter-spacing:-.06em;
+}
+.pbrand .tech{
+  font-size:1.2rem;
+  font-weight:700;
+  color:#184ea8;
+  letter-spacing:-.06em;
+}
+
+/* hero like original */
+.hero{
+  padding:22px 16px 26px;
+  background:linear-gradient(180deg,#5ca9ff 0%,#5a73f3 45%,#743ce4 100%);
+  color:#fff;
+}
+.hero h1{
+  font-size:1.6rem;
+  font-weight:500;
+  text-align:center;
+  margin-bottom:18px;
+}
+.hero h1 span{
+  font-weight:600;
+  font-family:'Caveat',cursive;
+  font-size:1.7rem;
+}
+
+/* app search pill */
+.search{
+  background:#fff;
+  color:#59526f;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  padding:4px 10px;
+}
+.search .left{
+  border-right:1px solid #ece7f7;
+  padding:8px 10px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:.86rem;
+}
+.search > div:last-child{
+  padding:8px 10px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:.86rem;
+}
+
+/* apps grid */
+.apps{
+  margin-top:-10px;
+  padding:0 12px 12px;
+  background:#fff;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px 12px;
+  padding:0 4px;
+}
+.app{
+  text-align:center;
+  font-size:13px;
+  color:#28233d;
+}
+.ico{
+  width:58px;
+  height:58px;
+  margin:0 auto 10px;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 8px 20px rgba(86,54,178,.12);
+  display:grid;
+  place-items:center;
+  font-size:1.5rem;
+  border:1px solid rgba(107,56,234,.06);
+}
+.gold{color:#d8a12a}
+.blue{color:#3f89ff}
+.pink{color:#c14ca4}
+.green{color:#34a58c}
+.links{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:14px 0 6px;
+  color:#2f2b3a;
+  font-weight:700;
+}
+
+/* action cards */
+.section{
+  padding:18px 16px 28px;
+  background:#f5f5f5;
+}
+.section h2{
+  font-size:1.55rem;
+  margin-bottom:18px;
+  color:#40395a;
+}
+.id{
+  display:grid;
+  grid-template-columns:1.06fr .94fr;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  margin-bottom:14px;
+}
+.info{padding:16px}
+.mini{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+.info h3{
+  font-size:1.1rem;
+  margin-bottom:8px;
+}
+.info p{
+  font-size:1.02rem;
+  font-weight:600;
+  margin-bottom:14px;
+}
+.photo-wrap{
+  background:linear-gradient(135deg,#f3d9ce,#f5e8df 45%,#dcc1b4);
+  display:grid;
+  place-items:center;
+  padding:12px;
+}
+.profile-photo{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:8px;
+  border:2px solid rgba(255,255,255,.75);
+  background:#ececec;
+}
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  color:var(--primary);
+  border:1px solid var(--primary);
+  border-radius:10px;
+  padding:8px 14px;
+  font-weight:700;
+  background:#fff;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:16px;
+  min-height:168px;
+  display:flex;
+  flex-direction:column;
+}
+.card h3{
+  font-size:1.02rem;
+  margin-bottom:10px;
+  color:#332e48;
+}
+.card p{
+  color:#29253b;
+  font-size:.96rem;
+  margin-bottom:auto;
+}
+
+/* drawer night view */
+.drawer{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  z-index:50;
+  overflow:auto;
+}
+.drawer.show{display:block}
+.drawer-panel{
+  width:100%;
+  max-width:430px;
+  min-height:100vh;
+  margin:0 auto;
+  background:#111;
+}
+.drawer-head{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:18px 18px;
+  border-bottom:1px solid #222;
+  position:sticky;
+  top:0;
+  background:#111;
+  z-index:2;
+  color:#fff;
+}
+.drawer-head span{
+  font-size:1.2rem;
+  font-weight:700;
+}
+.drawer-close{
+  position:absolute;
+  left:16px;
+  top:8px;
+  border:none;
+  background:transparent;
+  font-size:2.4rem;
+  line-height:1;
+  color:#fff;
+}
+
 .drawer-card{padding:0 0 18px}
-.drawer-top{display:flex;gap:14px;align-items:center;padding:18px 16px;background:linear-gradient(90deg,#6a2ddb 0%,#2e8cff 100%);color:#fff}
-.drawer-photo{width:96px;height:96px;border-radius:8px;object-fit:cover;border:3px solid rgba(255,255,255,.75);background:#eee}
-.drawer-company{font-size:2rem;font-weight:700;line-height:1.1}.drawer-name{font-size:1rem;margin-top:8px;font-weight:600}.drawer-id{font-size:1rem;opacity:.96;margin-top:8px}
-.pass-wrap{padding:16px}
-.pass-card{background:#f58a00;color:#fff;border-radius:0;padding:20px 18px 18px;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(241,121,17,.22)}
-.pass-card:before,.pass-card:after,.pass-card .grain1,.pass-card .grain2{content:'';position:absolute;border-radius:50%;pointer-events:none}
-.pass-card:before{width:320px;height:88px;left:-6px;top:48px;background:radial-gradient(circle at center, rgba(255,244,211,.92) 0%, rgba(255,244,211,.55) 22%, rgba(255,244,211,0) 62%);transform:rotate(12deg)}
-.pass-card:after{width:190px;height:190px;right:-42px;bottom:62px;background:radial-gradient(circle at center, rgba(255,230,180,.55) 0%, rgba(255,230,180,.22) 38%, rgba(255,230,180,0) 72%)}
-.pass-logo{position:absolute;right:18px;top:14px;color:#fff;font-style:italic;font-weight:900;line-height:.72;text-align:right;z-index:2;width:96px;transform:skewX(-10deg)}
-.pass-logo .num{display:block;font-size:4.6rem;letter-spacing:-.28rem;text-shadow:0 1px 0 rgba(255,255,255,.15)}
-.pass-logo .txt{display:block;font-size:2rem;letter-spacing:-.22rem;margin-top:-16px;font-weight:900}
-.entry-badge{display:inline-grid;grid-template-columns:auto;grid-template-rows:auto auto;border:2px solid rgba(255,255,255,.9);position:relative;z-index:1;background:transparent;margin-left:2px}
-.entry-badge span{padding:7px 14px;font-size:.88rem;letter-spacing:.48rem;line-height:1.02;background:rgba(255,255,255,.04)}
-.entry-badge span:last-child{background:#fff;color:#dd7b19}
-.zone-box{margin:28px 22px 0 22px;border:5px solid rgba(255,255,255,.96);position:relative;z-index:1;background:transparent}
-.zone-row{display:grid;grid-template-columns:112px 1fr}.zone-left,.zone-right{min-height:166px;display:flex;align-items:center;justify-content:center}.zone-left{border-right:5px solid rgba(255,255,255,.96)}
-.zone-left span{font-size:3rem;font-weight:700;letter-spacing:.08rem;writing-mode:vertical-rl;transform:rotate(180deg)}
-.zone-right span{font-size:8.2rem;font-weight:700;line-height:1}
-.entry-time{border-top:5px solid rgba(255,255,255,.96);border-bottom:5px solid rgba(255,255,255,.96);padding:6px 8px;text-align:center;font-size:.95rem;font-weight:700;letter-spacing:0;background:#d9892f;color:#fff;white-space:nowrap}
-.color-band{padding:4px 10px 7px;text-align:center;font-size:3.35rem;font-weight:700;line-height:1.02;white-space:nowrap;overflow:hidden}
-.gate{margin-top:18px;text-align:center;font-size:1.9rem;font-weight:700;position:relative;z-index:1}
-.admits{margin:18px auto 0;background:#f2eef4;color:#5a5868;width:max-content;padding:7px 20px;border-radius:7px;font-size:1rem;letter-spacing:.18rem;position:relative;z-index:1;box-shadow:0 2px 0 rgba(0,0,0,.08)}
-.pass-ribbon{margin:16px -18px 0;background:#1f1a1b;color:#fff;padding:10px 18px 9px;position:relative;font-weight:700;font-size:.94rem;text-align:center;line-height:1.1}
-.pass-ribbon:before,.pass-ribbon:after{content:'';position:absolute;top:0;width:0;height:0;border-top:19px solid transparent;border-bottom:19px solid transparent}.pass-ribbon:before{left:0;border-left:18px solid #f58a00}.pass-ribbon:after{right:0;border-right:18px solid #f58a00}
-.pass-ribbon span{font-style:italic}
-.pass-note{padding:18px 0 0;text-align:center;font-size:1.05rem;color:#111;font-weight:700;display:flex;align-items:center;justify-content:center;gap:26px}
-.pass-note .refresh{font-size:2.2rem;color:#8b3dd2;font-weight:500;line-height:1}
-@media (max-width:420px){.page{max-width:100%}.float{right:8px}.section h2{font-size:1.55rem}.drawer-company{font-size:1.75rem}.zone-left,.zone-right{min-height:154px}.zone-left span{font-size:2.65rem}.zone-right span{font-size:7.2rem}.color-band{font-size:3rem}.gate{font-size:1.65rem}.entry-time{font-size:.84rem}.pass-logo{right:14px;top:10px;width:82px}.pass-logo .num{font-size:4rem}.pass-logo .txt{font-size:1.7rem;margin-top:-14px}.pass-ribbon{font-size:.8rem}.pass-note{gap:20px}}
+.drawer-top{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  padding:18px 16px;
+  background:linear-gradient(90deg,#7b3fe0 0%,#368df9 100%);
+  color:#fff;
+}
+.drawer-photo{
+  width:96px;
+  height:96px;
+  border-radius:8px;
+  object-fit:cover;
+  border:3px solid rgba(255,255,255,.75);
+  background:#eee;
+}
+.drawer-company{
+  font-size:2rem;
+  font-weight:700;
+  line-height:1.1;
+}
+.drawer-name{
+  font-size:1rem;
+  margin-top:8px;
+  font-weight:600;
+}
+.drawer-id{
+  font-size:1rem;
+  opacity:.96;
+  margin-top:8px;
+}
+
+/* pass image center */
+.pass-wrap{
+  padding:16px;
+  background:#111;
+  display:flex;
+  justify-content:center;
+}
+.event-image{
+  max-width:100%;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+
+}
+
+.icons img.top-profile{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px solid #ddd;
+}
+
+/* responsive tweaks */
+@media (max-width:420px){
+  .page{max-width:100%}
+  .section h2{font-size:1.4rem}
+  .drawer-company{font-size:1.75rem}
+}
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="top"><div class="brand">SharePoint</div><div class="icons"><span>⚙</span><span>?</span><span>👤</span></div></div>
-  <div class="notice">Your organization doesn't allow you to download, print, or sync using this device. To use these actions, use a device that's joined to a domain or marked compliant by Intune. For help, contact your IT department. <b>More info.</b></div>
-  <div class="port"><div style="display:flex;align-items:center;gap:14px"><span>☰</span><div class="pbrand"><span class="my">My</span><span class="hcl">HCL</span><span class="tech">Tech</span></div></div><span>⋯</span></div>
-  <section class="hero"><h1>Welcome, <span>Sahil!</span></h1><div class="search"><div class="left"><span>App Search</span><span>⌄</span></div><div><span>🔍</span><span>Type to search any application</span></div></div></section>
-  <section class="apps"><div class="grid"><div class="app"><div class="ico gold">◔</div>Report Cybersecurity...</div><div class="app"><div class="ico blue">◎</div>Benefit Box</div><div class="app"><div class="ico pink">◌</div>Brand Resources</div><div class="app"><div class="ico green">◍</div>Cab Approval System (CAS)</div><div class="app"><div class="ico pink">▣</div>Global Claims System (GCS)</div><div class="app"><div class="ico green">◉</div>IT Helpdesk Dial-In</div><div class="app"><div class="ico gold">◔</div>MyHCLTech Support</div><div class="app"><div class="ico blue">◫</div>Time Sheet Management...</div><div class="app"><div class="ico pink">✈</div>Travel Management...</div></div><div class="links"><span>⌘ See all</span><span>↹ Customize</span></div></section>
-  <section class="section"><h2>Action Cards</h2>
+  <div class="top">
+  <div class="brand">SharePoint</div>
+  <div class="icons">
+    <span>⚙</span>
+    <span>?</span>
+    <img src="profile-pic.jpg" alt="Profile" class="top-profile">
+  </div>
+</div>
+
+  <div class="notice">
+    Your organization doesn't allow you to download, print, or sync using this device. To use these actions, use a device that's joined to a domain or marked compliant by Intune. For help, contact your IT department. <b>More info.</b>
+  </div>
+
+  <div class="port">
+    <div style="display:flex;align-items:center;gap:14px">
+      <span>☰</span>
+      <div class="pbrand">
+        <span class="my">My</span><span class="hcl">HCL</span><span class="tech">Tech</span>
+      </div>
+    </div>
+    <span>⋯</span>
+  </div>
+
+  <section class="hero">
+    <h1>Welcome, <span>Sahil!</span></h1>
+    <div class="search">
+      <div class="left">
+        <span>App Search</span><span>⌄</span>
+      </div>
+      <div>
+        <span>🔍</span><span>Type to search any application</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="apps">
+    <div class="grid">
+      <div class="app"><div class="ico gold">◔</div>Report Cybersecurity...</div>
+      <div class="app"><div class="ico blue">◎</div>Benefit Box</div>
+      <div class="app"><div class="ico pink">◌</div>Brand Resources</div>
+      <div class="app"><div class="ico green">◍</div>Cab Approval System (CAS)</div>
+      <div class="app"><div class="ico pink">▣</div>Global Claims System (GCS)</div>
+      <div class="app"><div class="ico green">◉</div>IT Helpdesk Dial-In</div>
+      <div class="app"><div class="ico gold">◔</div>MyHCLTech Support</div>
+      <div class="app"><div class="ico blue">◫</div>Time Sheet Management...</div>
+      <div class="app"><div class="ico pink">✈</div>Travel Management...</div>
+    </div>
+    <div class="links"><span>⌘ See all</span><span>↹ Customize</span></div>
+  </section>
+
+  <section class="section">
+    <h2>Action Cards</h2>
+
     <article class="id">
       <div class="info">
         <div class="mini">Laptop Pass</div>
@@ -76,8 +442,11 @@ img{display:block;max-width:100%}
         <div id="empId" style="display:none">52210450</div>
         <a href="#" class="btn">View details</a>
       </div>
-      <div class="photo-wrap"><img id="profileImage" src="profile-pic.jpg" alt="Profile photo" class="profile-photo"></div>
+      <div class="photo-wrap">
+        <img id="profileImage" src="profile-pic.jpg" alt="Profile photo" class="profile-photo">
+      </div>
     </article>
+
     <div class="cards">
       <article class="card" id="event-pass-card" style="cursor:pointer">
         <div class="mini">Event Pass</div>
@@ -85,16 +454,39 @@ img{display:block;max-width:100%}
         <p>Lucknow - Entry Pass</p>
         <a href="#" class="btn" id="eventViewBtn">View</a>
       </article>
-      <article class="card"><div class="mini">Approvals</div><h3>Manage</h3><p>Manage your pending approvals</p><a href="#" class="btn">View</a></article>
-      <article class="card"><div class="mini">Pending Actions</div><h3>2</h3><p>Your urgent &amp; other open actions</p><a href="#" class="btn">View</a></article>
-      <article class="card"><div class="mini">Incident Reporting</div><h3>Cybersecurity</h3><p>Report cybersecurity incident here</p><a href="#" class="btn">Raise incident</a></article>
+
+      <article class="card">
+        <div class="mini">Approvals</div>
+        <h3>Manage</h3>
+        <p>Manage your pending approvals</p>
+        <a href="#" class="btn">View</a>
+      </article>
+
+      <article class="card">
+        <div class="mini">Pending Actions</div>
+        <h3>2</h3>
+        <p>Your urgent &amp; other open actions</p>
+        <a href="#" class="btn">View</a>
+      </article>
+
+      <article class="card">
+        <div class="mini">Incident Reporting</div>
+        <h3>Cybersecurity</h3>
+        <p>Report cybersecurity incident here</p>
+        <a href="#" class="btn">Raise incident</a>
+      </article>
     </div>
   </section>
 </div>
 
+<!-- Night view event drawer -->
 <div class="drawer" id="eventDrawer" aria-hidden="true">
   <div class="drawer-panel">
-    <div class="drawer-head"><button id="closeDrawer" class="drawer-close">×</button><span>Event Pass</span></div>
+    <div class="drawer-head">
+      <button id="closeDrawer" class="drawer-close">×</button>
+      <span>Event Pass</span>
+    </div>
+
     <div class="drawer-card">
       <div class="drawer-top">
         <img src="profile-pic.jpg" alt="Profile photo" class="drawer-photo" id="drawerPhoto">
@@ -104,22 +496,27 @@ img{display:block;max-width:100%}
           <div class="drawer-id" id="drawerId">52210450</div>
         </div>
       </div>
-           <div class="pass-wrap">
+
+      <div class="pass-wrap">
         <img src="event-pass-img.jpg" alt="Event pass" class="event-image">
       </div>
+    </div>
+  </div>
+</div>
 
-<div class="float"><button class="fbtn">👍</button><button class="fbtn">⇄</button><button class="fbtn">✦</button></div>
 <script>
 const card = document.getElementById('event-pass-card');
 const btn = document.getElementById('eventViewBtn');
 const drawer = document.getElementById('eventDrawer');
-const close = document.getElementById('closeDrawer');
+const closeBtn = document.getElementById('closeDrawer');
+
 const sourceName = document.getElementById('empName');
 const sourceId = document.getElementById('empId');
 const sourceImg = document.getElementById('profileImage');
 const drawerName = document.getElementById('drawerName');
 const drawerId = document.getElementById('drawerId');
 const drawerPhoto = document.getElementById('drawerPhoto');
+
 function openDrawer(e){
   if(e) e.preventDefault();
   drawerName.textContent = sourceName.textContent.trim();
@@ -129,7 +526,7 @@ function openDrawer(e){
 }
 card.addEventListener('click', openDrawer);
 btn.addEventListener('click', openDrawer);
-close.addEventListener('click', () => drawer.classList.remove('show'));
+closeBtn.addEventListener('click', () => drawer.classList.remove('show'));
 </script>
 </body>
 </html>

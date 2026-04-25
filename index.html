@@ -51,9 +51,17 @@ img{display:block;max-width:100%}
 }
 .icons{
   display:flex;
+  align-items:center;
   gap:16px;
   color:#444057;
   font-size:1.1rem;
+}
+.icons img.top-profile{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px solid #ddd;
 }
 
 /* notice bar smaller */
@@ -272,7 +280,7 @@ img{display:block;max-width:100%}
   margin-bottom:auto;
 }
 
-/* drawer night view */
+/* drawer with white event page */
 .drawer{
   position:fixed;
   inset:0;
@@ -360,16 +368,7 @@ img{display:block;max-width:100%}
 .event-image{
   max-width:100%;
   border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,.6);
-
-}
-
-.icons img.top-profile{
-  width:24px;
-  height:24px;
-  border-radius:50%;
-  object-fit:cover;
-  border:1px solid #ddd;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
 /* responsive tweaks */
@@ -383,13 +382,13 @@ img{display:block;max-width:100%}
 <body>
 <div class="page">
   <div class="top">
-  <div class="brand">SharePoint</div>
-  <div class="icons">
-    <span>⚙</span>
-    <span>?</span>
-    <img src="profile-pic.jpg" alt="Profile" class="top-profile">
+    <div class="brand">SharePoint</div>
+    <div class="icons">
+      <span>⚙</span>
+      <span>?</span>
+      <img src="profile-pic.jpg" alt="Profile" class="top-profile">
+    </div>
   </div>
-</div>
 
   <div class="notice">
     Your organization doesn't allow you to download, print, or sync using this device. To use these actions, use a device that's joined to a domain or marked compliant by Intune. For help, contact your IT department. <b>More info.</b>
@@ -480,7 +479,7 @@ img{display:block;max-width:100%}
   </section>
 </div>
 
-<!-- Night view event drawer -->
+<!-- Event drawer -->
 <div class="drawer" id="eventDrawer" aria-hidden="true">
   <div class="drawer-panel">
     <div class="drawer-head">
@@ -525,6 +524,7 @@ function openDrawer(e){
   drawerPhoto.src = sourceImg.getAttribute('src');
   drawer.classList.add('show');
 }
+
 card.addEventListener('click', openDrawer);
 btn.addEventListener('click', openDrawer);
 closeBtn.addEventListener('click', () => drawer.classList.remove('show'));
